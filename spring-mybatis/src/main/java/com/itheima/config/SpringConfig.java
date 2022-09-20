@@ -12,6 +12,6 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration//表明这是一个核心配置类
 @ComponentScan("com.itheima")//注解扫描器
 @PropertySource("classpath:db.properties")//加载配置文件
-@Import({JDBCConfig.class,MapperScanConfig.class,MybatisConfig.class})//导入相关配置类
+@Import({JDBCConfig.class,MybatisConfig.class})//导入相关配置类
 public class SpringConfig {
 }

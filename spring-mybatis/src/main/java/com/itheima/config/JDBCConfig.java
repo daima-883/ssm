@@ -24,4 +24,5 @@ public class JDBCConfig {
         dataSource.setPassword(password);
         return dataSource;
     }
+
 }

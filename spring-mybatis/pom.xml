@@ -39,10 +39,23 @@
             <artifactId>spring-beans</artifactId>
             <version>5.3.22</version>
         </dependency>
+<!--        报错找不到org.springframework.dao.support.DaoSupport时添加-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>5.2.2.RELEASE</version>
+        </dependency>
+
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>3.5.7</version>
+        </dependency>
+<!--        数据连接-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>5.2.10.RELEASE</version>
         </dependency>
     </dependencies>
 
