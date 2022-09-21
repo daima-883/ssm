@@ -13,6 +13,7 @@ public class MybatisConfig {
     public SqlSessionFactoryBean sqlSessionFactoryBean(DataSource dataSource){
         SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(dataSource);
+        //起别名，可写可不写目前
         sqlSessionFactoryBean.setTypeAliasesPackage("com.itheima.pojo");
         return sqlSessionFactoryBean;
     }
