@@ -15,6 +15,6 @@ public class TransactionTest {
     private AccountService accountService;
     @Test
     public void test1(){
-        accountService.transfer("Tom","Jerry",500.00);
+        accountService.transfer("Tom","Jerry",50D);
     }
 }
