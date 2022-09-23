@@ -2,7 +2,32 @@ package com.itheima.config;
 
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 import org.springframework.web.servlet.support.AbstractDispatcherServletInitializer;
+//web容器配置类，加载SpringMVC配置，并设置SpringMVC请求拦截的路径
+//简化版，原版在下面注释中
+public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatcherServletInitializer{
+    //初始化Spring配置文件
+    @Override
+    protected Class<?>[] getRootConfigClasses() {
+        return new Class[0];
+    }
+    //初始化Springmvc配置文件
+    @Override
+    protected Class<?>[] getServletConfigClasses() {
+        return new Class[]{SpringMvcConfig.class};
+    }
+    //设置所有请求都由springmvc管理
+    @Override
+    protected String[] getServletMappings() {
+        return new String[]{"/"};
+    }
+}
+
+
+
+/*
+原版
 //web容器配置类，加载SpringMVC配置，并设置SpringMVC请求拦截的路径
 public class ServletContainersInitConfig extends AbstractDispatcherServletInitializer {
     //加载springmvc配置类，产生springmvc容器（本质还是spring容器）
@@ -25,3 +50,5 @@ public class ServletContainersInitConfig extends AbstractDispatcherServletInitia
         return null;
     }
 }
+
+ */
