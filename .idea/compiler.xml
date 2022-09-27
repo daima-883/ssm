@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-transaction" />
-        <module name="spring-aop" />
         <module name="spring-mvc" />
         <module name="baidujianrong-case" />
+        <module name="spring-mvc2" />
+        <module name="spring-aop" />
+        <module name="spring-mvc21" />
         <module name="spring-mybatis" />
       </profile>
     </annotationProcessing>
@@ -17,6 +19,8 @@
       <module name="baidujianrong-case" target="1.5" />
       <module name="spring-aop" target="1.5" />
       <module name="spring-mvc" target="1.8" />
+      <module name="spring-mvc2" target="1.8" />
+      <module name="spring-mvc21" target="1.8" />
       <module name="spring-mybatis" target="8" />
       <module name="spring-transaction" target="1.5" />
     </bytecodeTargetLevel>

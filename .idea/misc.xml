@@ -2,6 +2,7 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/spring-mvc" />
+    <file type="web" url="file://$PROJECT_DIR$/spring-mvc2" />
     <file type="web" url="file://$PROJECT_DIR$/spring-mybatis" />
   </component>
   <component name="MavenProjectsManager">
@@ -12,10 +13,12 @@
         <option value="$PROJECT_DIR$/baidujianrong-case/pom.xml" />
         <option value="$PROJECT_DIR$/spring-transaction/pom.xml" />
         <option value="$PROJECT_DIR$/spring-mvc/pom.xml" />
+        <option value="$PROJECT_DIR$/maven-web/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-mvc2/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

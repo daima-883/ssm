@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/baidujianrong-case/baidujianrong-case.iml" filepath="$PROJECT_DIR$/baidujianrong-case/baidujianrong-case.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-aop/spring-aop.iml" filepath="$PROJECT_DIR$/spring-aop/spring-aop.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-mvc/spring-mvc.iml" filepath="$PROJECT_DIR$/spring-mvc/spring-mvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven-web/spring-mvc2.iml" filepath="$PROJECT_DIR$/maven-web/spring-mvc2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-mvc2/spring-mvc21.iml" filepath="$PROJECT_DIR$/spring-mvc2/spring-mvc21.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-mybatis/spring-mybatis.iml" filepath="$PROJECT_DIR$/spring-mybatis/spring-mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-transaction/spring-transaction.iml" filepath="$PROJECT_DIR$/spring-transaction/spring-transaction.iml" />
     </modules>
