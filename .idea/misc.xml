@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/integrate-spring-mybaties" />
     <file type="web" url="file://$PROJECT_DIR$/spring-mvc" />
     <file type="web" url="file://$PROJECT_DIR$/spring-mvc2" />
     <file type="web" url="file://$PROJECT_DIR$/spring-mybatis" />
@@ -15,6 +16,9 @@
         <option value="$PROJECT_DIR$/spring-mvc/pom.xml" />
         <option value="$PROJECT_DIR$/maven-web/pom.xml" />
         <option value="$PROJECT_DIR$/spring-mvc2/pom.xml" />
+        <option value="$PROJECT_DIR$/integrate-spring-mybaties/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-ssm/pom.xml" />
       </list>
     </option>
   </component>

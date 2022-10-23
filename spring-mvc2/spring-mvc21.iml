@@ -23,6 +23,7 @@
         <webroots>
           <root url="file://$MODULE_DIR$/target/tomcat/conf" relative="/WEB-INF" />
         </webroots>
+        <sourceRoots />
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">

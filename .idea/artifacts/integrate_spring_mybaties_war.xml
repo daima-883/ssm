@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="integrate-spring-mybaties:war">
+    <output-path>$PROJECT_DIR$/integrate-spring-mybaties/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>false</exploded>
+        <module>integrate-spring-mybaties</module>
+        <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
+      </options>
+    </properties>
+    <root id="archive" name="integrate-spring-mybaties-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="integrate-spring-mybaties:war exploded" />
+    </root>
+  </artifact>
+</component>

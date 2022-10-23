@@ -6,9 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="springboot-ssm" />
         <module name="spring-transaction" />
+        <module name="springboot-demo" />
         <module name="spring-mvc" />
         <module name="baidujianrong-case" />
+        <module name="integrate-spring-mybaties" />
         <module name="spring-mvc2" />
         <module name="spring-aop" />
         <module name="spring-mvc21" />
@@ -17,12 +20,21 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="baidujianrong-case" target="1.5" />
+      <module name="integrate-spring-mybaties" target="8" />
       <module name="spring-aop" target="1.5" />
       <module name="spring-mvc" target="1.8" />
       <module name="spring-mvc2" target="1.8" />
       <module name="spring-mvc21" target="1.8" />
       <module name="spring-mybatis" target="8" />
       <module name="spring-transaction" target="1.5" />
+      <module name="springboot-demo" target="1.8" />
+      <module name="springboot-ssm" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot-demo" options="-parameters" />
+      <module name="springboot-ssm" options="-parameters" />
+    </option>
   </component>
 </project>
