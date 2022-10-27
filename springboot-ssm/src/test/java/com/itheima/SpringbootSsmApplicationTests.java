@@ -1,5 +1,6 @@
 package com.itheima;
 
+import com.itheima.domain.Book;
 import com.itheima.mapper.BookMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,5 +14,12 @@ class SpringbootSsmApplicationTests {
     @Test
     public void testDelete(){
         bookMapper.deleteById(14);
+    }
+    //乐观锁测试
+    @Test
+    public void testUpdate(){
+        Book book = bookMapper.selectById(15);
+        book.setName("修改值");
+        bookMapper.updateById(book);
     }
 }

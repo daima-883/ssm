@@ -1,9 +1,6 @@
 package com.itheima.domain;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 @Data
@@ -15,4 +12,6 @@ public class Book {
     private Integer count;
     @TableLogic(value = "0",delval = "1")
     private Integer deleted;
+    @Version
+    private Integer version;
 }
