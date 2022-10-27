@@ -107,4 +107,20 @@ class SpringbootSsmApplicationTests {
         Book book = bookMapper.selectOne(lqw);
         System.out.println(book);
     }
+    //范围查询lt,gt,le,ge,between
+    @Test
+    public void scopeQuery() {
+        LambdaQueryWrapper<Book> lqw = new LambdaQueryWrapper<Book>();
+        lqw.between(Book::getCount, 20, 60);
+        List<Book> bookList = bookMapper.selectList(lqw);
+        System.out.println(bookList);
+    }
+    //模糊查询like(非全文检索版）
+    @Test
+    public void likeQuery() {
+        LambdaQueryWrapper<Book> lqw = new LambdaQueryWrapper<Book>();
+        lqw.like(Book::getType,"计算");//likeright(Book::getType,"计算")=计算%，right，left指%位置
+        List<Book> bookList = bookMapper.selectList(lqw);
+        System.out.println(bookList);
+    }
 }
