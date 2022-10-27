@@ -99,5 +99,12 @@ class SpringbootSsmApplicationTests {
         List<Map<String, Object>> bookList = bookMapper.selectMaps(qw);
         System.out.println(bookList);
     }
-
+    //条件查询之模拟登录操作
+    @Test
+    public void simulatelogin() {
+        LambdaQueryWrapper<Book> lqw = new LambdaQueryWrapper<Book>();
+        lqw.eq(Book::getName,"Spring实战 第5版").eq(Book::getType,"计算机理论");
+        Book book = bookMapper.selectOne(lqw);
+        System.out.println(book);
+    }
 }
