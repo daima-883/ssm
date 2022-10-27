@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -18,109 +19,14 @@ import java.util.Map;
 class SpringbootSsmApplicationTests {
     @Autowired
     private BookMapper bookMapper;
+    //测试批量删除，查询同理
+    @Test
+    public void testDelete(){
+        List<Integer> bookList = new ArrayList<>();
+        bookList.add(7);
+        bookList.add(8);
+        bookList.add(9);
+        bookMapper.deleteBatchIds(bookList);
 
-    @Test
-    public void testSelectAll(){
-        System.out.println(bookMapper.selectList(null));
-    }
-//    分页查询
-    @Test
-    public void selectByPage(){
-        IPage<Book> page = new Page(2,2);
-        IPage<Book> bookIPage = bookMapper.selectPage(page, null);
-        System.out.println(bookIPage.getRecords());
-    }
-    //按条件查询
-    //方式一:常规模式
-    @Test
-    public void selectByQuery1(){
-        QueryWrapper<Book> qw = new QueryWrapper<Book>();
-        //下面2行写法不一样，但是结果，意思一样
-        qw.lt("count",60);//查询count字段小于20
-        qw.lambda().gt(Book::getCount,20);//查询count字段大于20，这种写法避免字段书写出错
-        List<Book> bookList = bookMapper.selectList(qw);
-        System.out.println(bookList);
-    }
-    //方式二：链式编程（并且关系的时候用）
-    @Test
-    public void selectByQuery2(){
-        QueryWrapper<Book> qw = new QueryWrapper<Book>();
-        qw.lt("count",60).gt("count",20);//并且关系可以用链式法
-        List<Book> bookList = bookMapper.selectList(qw);
-        System.out.println(bookList);
-    }
-    //方式3：lambda格式
-    @Test
-    public void selectByQuery3(){
-        QueryWrapper<Book> qw = new QueryWrapper<Book>();
-        qw.lambda().lt(Book::getCount,60);//查询count字段小于20
-        qw.lambda().gt(Book::getCount,20);//查询count字段大于20，这种写法避免字段书写出错
-        List<Book> bookList = bookMapper.selectList(qw);
-        System.out.println(bookList);
-    }
-    //方式4：简化版lambda格式
-    @Test
-    public void selectByQuery4(){
-        LambdaQueryWrapper<Book> lqw = new LambdaQueryWrapper<Book>();
-//        //查询条件为20-60数量的图书
-//        lqw.lt(Book::getCount,60).gt(Book::getCount,20);
-        //查询条件为小于20或者大于60数量的图书
-        lqw.lt(Book::getCount,20).or().gt(Book::getCount,60);
-        List<Book> bookList = bookMapper.selectList(lqw);
-        System.out.println(bookList);
-    }
-    //条件查询null值的判断与处理
-    @Test
-    public void selectByQuery5(){
-        QueryBook queryBook = new QueryBook();
-        queryBook.setCount(20);
-        queryBook.setCount2(60);
-        LambdaQueryWrapper<Book> lqw = new LambdaQueryWrapper<Book>();
-        //查询条件为20-60数量的图书
-        lqw.lt(null != queryBook.getCount(),Book::getCount,queryBook.getCount2()).gt(null != queryBook.getCount(),Book::getCount,queryBook.getCount());
-        List<Book> bookList = bookMapper.selectList(lqw);
-        System.out.println(bookList);
-    }
-    //查询投影
-    @Test
-    public void selectByQuery6(){
-        QueryWrapper<Book> qw = new QueryWrapper<Book>();
-        //只查询name,id字段
-        qw.select("name","id");
-        List<Book> bookList = bookMapper.selectList(qw);
-        System.out.println(bookList);
-    }
-    @Test
-    public void selectByQuery7(){
-        QueryWrapper<Book> qw = new QueryWrapper<Book>();
-        //查询结果包含类模型未知属性
-        qw.select("count(*) as count","name");
-        qw.groupBy("name");
-        List<Map<String, Object>> bookList = bookMapper.selectMaps(qw);
-        System.out.println(bookList);
-    }
-    //条件查询之模拟登录操作
-    @Test
-    public void simulatelogin() {
-        LambdaQueryWrapper<Book> lqw = new LambdaQueryWrapper<Book>();
-        lqw.eq(Book::getName,"Spring实战 第5版").eq(Book::getType,"计算机理论");
-        Book book = bookMapper.selectOne(lqw);
-        System.out.println(book);
-    }
-    //范围查询lt,gt,le,ge,between
-    @Test
-    public void scopeQuery() {
-        LambdaQueryWrapper<Book> lqw = new LambdaQueryWrapper<Book>();
-        lqw.between(Book::getCount, 20, 60);
-        List<Book> bookList = bookMapper.selectList(lqw);
-        System.out.println(bookList);
-    }
-    //模糊查询like(非全文检索版）
-    @Test
-    public void likeQuery() {
-        LambdaQueryWrapper<Book> lqw = new LambdaQueryWrapper<Book>();
-        lqw.like(Book::getType,"计算");//likeright(Book::getType,"计算")=计算%，right，left指%位置
-        List<Book> bookList = bookMapper.selectList(lqw);
-        System.out.println(bookList);
     }
 }
