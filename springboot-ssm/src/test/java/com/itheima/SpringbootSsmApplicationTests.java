@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.itheima.domain.Book;
+import com.itheima.domain.QueryBook;
 import com.itheima.mapper.BookMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,6 +65,18 @@ class SpringbootSsmApplicationTests {
 //        lqw.lt(Book::getCount,60).gt(Book::getCount,20);
         //查询条件为小于20或者大于60数量的图书
         lqw.lt(Book::getCount,20).or().gt(Book::getCount,60);
+        List<Book> bookList = bookMapper.selectList(lqw);
+        System.out.println(bookList);
+    }
+    //条件查询null值的判断与处理
+    @Test
+    public void selectByQuery5(){
+        QueryBook queryBook = new QueryBook();
+        queryBook.setCount(20);
+        queryBook.setCount2(60);
+        LambdaQueryWrapper<Book> lqw = new LambdaQueryWrapper<Book>();
+        //查询条件为20-60数量的图书
+        lqw.lt(null != queryBook.getCount(),Book::getCount,queryBook.getCount2()).gt(null != queryBook.getCount(),Book::getCount,queryBook.getCount());
         List<Book> bookList = bookMapper.selectList(lqw);
         System.out.println(bookList);
     }
