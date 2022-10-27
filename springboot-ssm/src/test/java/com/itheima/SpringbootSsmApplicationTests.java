@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
+import java.util.Map;
 
 @SpringBootTest
 class SpringbootSsmApplicationTests {
@@ -80,4 +81,23 @@ class SpringbootSsmApplicationTests {
         List<Book> bookList = bookMapper.selectList(lqw);
         System.out.println(bookList);
     }
+    //查询投影
+    @Test
+    public void selectByQuery6(){
+        QueryWrapper<Book> qw = new QueryWrapper<Book>();
+        //只查询name,id字段
+        qw.select("name","id");
+        List<Book> bookList = bookMapper.selectList(qw);
+        System.out.println(bookList);
+    }
+    @Test
+    public void selectByQuery7(){
+        QueryWrapper<Book> qw = new QueryWrapper<Book>();
+        //查询结果包含类模型未知属性
+        qw.select("count(*) as count","name");
+        qw.groupBy("name");
+        List<Map<String, Object>> bookList = bookMapper.selectMaps(qw);
+        System.out.println(bookList);
+    }
+
 }
