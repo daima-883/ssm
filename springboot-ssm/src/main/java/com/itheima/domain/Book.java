@@ -8,4 +8,5 @@ public class Book {
     private String name;
     private String type;
     private String description;
+    private Integer count;
 }
