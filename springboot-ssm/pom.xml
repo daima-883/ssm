@@ -113,4 +113,15 @@
             </properties>
         </profile>
     </profiles>
+<!--私服配置-->
+    <distributionManagement>
+        <repository>
+            <id>itheima-release</id>
+            <url>http://localhost:8081/repository/itheima-release/</url>
+        </repository>
+        <snapshotRepository>
+            <id>itheima-snapshot</id>
+            <url>http://localhost:8081/repository/itheima-snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
