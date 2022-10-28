@@ -67,4 +67,31 @@
         </plugins>
     </build>
 
+    <profiles>
+        <!--开发环境-->
+        <profile>
+            <id>env_dev</id>
+            <properties>
+                <jdbc-url>jdbc:mysql://127.0.0.1:3306/ssm_db?useSSL=false</jdbc-url>
+            </properties>
+        <!--默认环境-->
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <!--生产环境-->
+        <profile>
+            <id>env_pro</id>
+            <properties>
+                <jdbc-url>jdbc:mysql://127.0.0.1:3306/ssm_db?useSSL=false</jdbc-url>
+            </properties>
+        </profile>
+        <!--测试环境-->
+        <profile>
+            <id>env_test</id>
+            <properties>
+                <jdbc-url>jdbc:mysql://127.0.0.1:3306/ssm_db?useSSL=false</jdbc-url>
+            </properties>
+        </profile>
+    </profiles>
 </project>
